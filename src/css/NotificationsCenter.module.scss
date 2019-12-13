@@ -1,0 +1,207 @@
+@import "../sass/variables";
+@import "../sass/mixins";
+
+.AlertChartEntry {
+  min-width: 25rem;
+  height: 5rem;
+
+  &_inner {
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+    @include row_start_center;
+
+    &_item {
+      margin-right: 1.5rem;
+      font-family: $primary_font;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: map-get($map: $textGreys, $key: "medium");
+
+      &_icon {
+        width: 2rem;
+        height: 2rem;
+        fill: map-get($map: $flatColors, $key: "mainRed");
+
+        &:hover {
+          cursor: pointer;
+          fill: map-get($map: $colors, $key: "mainRed");
+        }
+      }
+    }
+  }
+}
+
+// .text {
+//   margin-left: auto;
+// }
+.AlertChartEntry_inner_item:last-child {
+  margin-left: auto;
+}
+
+.AlertChartEntry_inner_item:nth-child(5) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.AlertChartEntry:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.AlertChartEntry:nth-child(even) {
+  background-color: map-get($map: $blueGreys, $key: "lightest");
+}
+
+.NotificationsCenter {
+  width: 100%;
+  height: 4rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #eaecef;
+
+  &_container {
+    padding: 0 1rem;
+    @include row_between_center;
+
+    &_icon {
+      width: 2rem;
+      height: 2rem;
+      opacity: 0.6;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &_active {
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        fill: map-get($map: $colors, $key: "mainRed");
+        -webkit-animation: pulsate-fwd 0.5s ease-in-out infinite both;
+        animation: pulsate-fwd 0.5s ease-in-out infinite both;
+      }
+    }
+
+    &_link {
+      margin-left: 0.5rem;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+
+      &:hover {
+        cursor: pointer;
+        font-weight: 600;
+      }
+    }
+
+    &_center {
+      font-family: $primary_font;
+      color: map-get($map: $blueGreys, $key: "medium");
+    }
+  }
+
+  &_open {
+    height: 20rem;
+    overflow-y: scroll;
+    background-color: #eaecef;
+  }
+
+  &_data {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 2rem 1rem;
+    display: none;
+    font-family: $primary_font;
+    margin-top: 2rem;
+
+    &_status {
+      font-size: 1.8rem;
+      font-family: $primary_font;
+    }
+
+    &_details {
+      margin-top: 2rem;
+    }
+
+    &_details_heading {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.chevron {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: map-get($map: $blueGreys, $key: "blackish");
+
+  &:hover {
+    fill: map-get($map: $colors, $key: "vibe");
+  }
+}
+
+.rotate-center {
+  -webkit-animation: rotate-center 0.3s ease-in-out both;
+  animation: rotate-center 0.3s ease-in-out both;
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+.data {
+  display: initial;
+}

@@ -1,0 +1,109 @@
+@import "../sass/mixins";
+@import "../sass/variables";
+
+.ADL {
+  width: 12rem;
+  height: 10rem;
+  border-left: 1px solid #ccc;
+  border-radius: 0.5rem;
+  @include base_flex;
+  -ms-flex-preferred-size: 1;
+  flex-basis: 1;
+  font-family: $primary_font;
+
+  &_title {
+    width: 12rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    opacity: 0.6;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    @include col_center_all;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+  }
+
+  &:nth-child(1) {
+    border-bottom: 3px solid #00aced;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  &:nth-child(2) {
+    border-bottom: 3px solid #d20068;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  &:nth-child(3) {
+    border-bottom: 3px solid #44f0b5;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  &:nth-child(4) {
+    border-bottom: 3px solid #a846a1;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  &:nth-child(5) {
+    border-bottom: 3px solid #5cbcea;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  &:nth-child(6) {
+    border-bottom: 3px solid #8a5cea;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  &:nth-child(7) {
+    border-bottom: 3px solid #ff957d;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  &:nth-child(8) {
+    border-bottom: 3px solid #00aced;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  &:nth-child(9) {
+    border-bottom: 3px solid #d20068;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  &:nth-child(10) {
+    border-bottom: 3px solid #44f0b5;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  &:nth-child(11) {
+    border-bottom: 3px solid #a846a1;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  &:nth-child(12) {
+    border-bottom: 3px solid #5cbcea;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  &:nth-child(13) {
+    border-bottom: 3px solid #8a5cea;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  &:nth-child(14) {
+    border-bottom: 3px solid #ff957d;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .ADL {
+    width: 10rem;
+
+
+    &_title {
+      padding: 0.65rem;
+    }
+  }
+}

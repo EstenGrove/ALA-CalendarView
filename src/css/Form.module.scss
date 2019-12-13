@@ -1,0 +1,22 @@
+@import "../sass/mixins";
+@import "../sass/variables";
+
+.Form {
+  margin: 2rem auto;
+  margin-top: 4rem;
+  max-width: 40rem;
+  height: 40rem;
+  padding: 2rem 3rem;
+  font-family: "Raleway";
+  border-radius: 1rem;
+  -webkit-box-shadow: 2px 3px 13px -1px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 3px 13px -1px rgba(0, 0, 0, 0.4);
+  @include col_start_center;
+
+  &_heading {
+    font-size: 3.5rem;
+    margin-bottom: 5rem;
+    font-family: $primary_font;
+    color: map-get($map: $blueGreys, $key: "headings");
+  }
+}

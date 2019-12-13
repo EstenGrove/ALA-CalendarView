@@ -1,0 +1,17 @@
+@import '../sass/variables';
+@import '../sass/mixins';
+
+.Loading {
+    display: block;
+    margin: 3rem auto;
+
+    &_text {
+        font-size: 2rem;
+        text-align: center;
+        font-family: $primary_font;
+    }
+}
+
+.hide {
+    display: none;
+}

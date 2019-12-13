@@ -1,0 +1,130 @@
+@import "../sass/mixins";
+@import "../sass/variables";
+
+.CalendarHeading {
+  width: 100%;
+  height: 8rem;
+  position: relative;
+  z-index: 20;
+}
+
+.headings {
+  width: 100%;
+  height: 100%;
+  @include base_flex;
+  -ms-flex-preferred-size: 1;
+  flex-basis: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  font-family: $primary_font;
+
+  &_category {
+    min-width: 12rem;
+    min-height: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    border-left: 3px solid #ccc;
+    text-align: center;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    color: map-get($map: $blueGreys, $key: "saturated");
+
+    &__Text {
+      width: 100%;
+      height: 100%;
+      padding-top: 2rem;
+      font-size: 2rem;
+      font-weight: 700;
+      opacity: 0.6;
+      -ms-flex-negative: 1;
+      flex-shrink: 1;
+    }
+  }
+
+  &_date {
+    width: 12rem;
+    font-size: 3rem;
+    font-weight: 600;
+    color: map-get($map: $blueGreys, $key: "dark");
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    @include col_center_all;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+  }
+
+  &_day {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: map-get($map: $blueGreys, $key: "medium");
+  }
+}
+
+@media screen and (max-width: 985px) {
+  .headings_category {
+    max-width: 12rem;
+
+    &__Text {
+      font-size: 1.7rem;
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .headings_category {
+    min-width: 10rem;
+    margin: 0 0;
+
+    &__Text {
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .headings {
+    &_category {
+      max-width: 10rem;
+    }
+    &_category--Text {
+      font-size: 1.4rem;
+    }
+
+    &_date {
+      font-size: 1.8rem;
+    }
+    &_day {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .headings {
+    &_category {
+      font-size: 1.3rem;
+    }
+
+    &_category--Text {
+      font-size: 1.3rem;
+      opacity: 0.6;
+    }
+
+    &_date {
+      font-size: 2rem;
+    }
+    &_day {
+      font-size: 1.1rem;
+    }
+  }
+}

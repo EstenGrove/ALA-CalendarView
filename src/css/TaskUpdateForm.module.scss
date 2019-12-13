@@ -1,0 +1,36 @@
+@import "../sass/variables";
+@import "../sass/mixins";
+
+.TaskUpdateForm {
+  width: 100%;
+  height: auto;
+
+  &_title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: map-get($map: $colors, $key: "mainBlackBlue");
+    margin-bottom: 2rem;
+  }
+
+  &_priorities {
+    width: 50%;
+    margin-bottom: 2rem;
+    @include row_between_center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    &_label {
+      font-size: 1.6rem;
+      color: map-get($map: $blueGreys, $key: "subheadings");
+      font-weight: 500;
+    }
+  }
+}
+
+.reassess_notes {
+  display: none;
+}
+
+.show {
+  display: initial;
+}

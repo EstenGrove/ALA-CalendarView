@@ -1,0 +1,102 @@
+@import "../sass/variables";
+@import "../sass/mixins";
+
+.TaskItem {
+  width: 100%;
+  height: 20rem;
+  border: 1px solid map-get($map: $colors, $key: "mainGrey");
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  &_inner {
+    @include fill_container;
+
+    &_top {
+      width: auto;
+
+      &_adl {
+        font-size: 1.5rem;
+        color: map-get($map: $colors, $key: "mainBlackBlue");
+        font-weight: 600;
+        margin-bottom: 2rem;
+      }
+
+      &_icon {
+        width: 2rem;
+        height: 2rem;
+        fill: map-get($map: $flatColors, $key: "mainRed");
+      }
+    }
+
+    &_markDone {
+      width: auto;
+    }
+
+    &_middle {
+      width: 100%;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+
+      &_heading {
+        font-weight: 600;
+        color: map-get($map: $blueGreys, $key: "subheadings");
+      }
+
+      &_desc {
+        font-size: 1.5rem;
+        color: map-get($map: $blueGreys, $key: "headings");
+      }
+
+      &_right {
+        font-size: 1.4rem;
+        text-align: right;
+
+        &_shift {
+          color: map-get($map: $blueGreys, $key: "subheadings");
+        }
+      }
+    }
+
+    &_bottom {
+      margin-top: 1rem;
+      @include row_between_center;
+
+      &_left {
+        @include col_start_start;
+      }
+
+      &_right {
+        @include col_center_all;
+
+        &_text {
+          color: map-get($map: $blueGreys, $key: "subheadings");
+          font-size: 1rem;
+          font-weight: 300;
+        }
+
+        &_item {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  &_icon {
+    width: 1.3rem;
+    height: 1.3rem;
+    fill: map-get($map: $blueGreys, $key: "subheadings");
+  }
+
+  &:hover {
+    -webkit-box-shadow: map-get($map: $shadows, $key: "tight");
+    box-shadow: map-get($map: $shadows, $key: "tight");
+    cursor: pointer;
+  }
+}
+
+.Completed {
+  opacity: 0.4;
+}

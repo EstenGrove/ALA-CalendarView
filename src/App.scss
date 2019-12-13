@@ -1,0 +1,27 @@
+@import "./sass/layout";
+@import "./sass/mixins";
+@import "./sass/variables";
+
+.App {
+  max-width: 100vw;
+  height: 100vh;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 600;
+  color: map-get($map: $blueGreys, $key: 'headings');
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: map-get($map: $blueGreys, $key: 'subheadings');
+
+}
+
+.btn {
+  background-color: map-get($map: $flatColors, $key: 'main');
+  color: map-get($map: $flatColors, $key: 'main');
+  font-weight: 600;
+}

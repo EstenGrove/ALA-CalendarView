@@ -1,0 +1,13 @@
+@import '../sass/variables';
+@import '../sass/mixins';
+
+.ViewWeekly {
+  @include fill_container;
+  padding: 3rem 4rem;
+
+  &_placeholder {
+    font-family: map-get($map: $fonts, $key: 'mainSans');
+    font-size: 2.5rem;
+    text-align: center;
+  }
+}

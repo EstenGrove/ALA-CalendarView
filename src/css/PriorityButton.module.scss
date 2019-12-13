@@ -1,0 +1,40 @@
+@import '../sass/variables';
+@import '../sass/mixins';
+
+.RadioButton {
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    -webkit-box-shadow: map-get($map: $shadows, $key: 'tight');
+    box-shadow: map-get($map: $shadows, $key: 'tight');
+    background-color: map-get($map: $colors, $key: 'mainGrey');
+    margin-bottom: 1rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+
+
+    &_label {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: map-get($map: $colors, $key: 'mainBlackBlue');
+        cursor: pointer;
+    }
+}
+
+.isSelected {
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    -webkit-box-shadow: map-get($map: $shadows, $key: 'tight');
+    box-shadow: map-get($map: $shadows, $key: 'tight');
+    background-color: map-get($map: $colors, $key: 'mainBlackBlue');
+    color: #ffffff;
+    margin-bottom: 1rem;
+
+    &>span {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #ffffff;
+    }
+}

@@ -1,0 +1,86 @@
+@import "../sass/variables";
+@import "../sass/mixins";
+
+.SearchSection {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+
+  &_title {
+    font-size: 2rem;
+  }
+
+  &_form {
+    width: 100%;
+    height: auto;
+    padding: 0 2rem;
+    font-family: $primary_font;
+
+    &_iconInput {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      width: 90%;
+      padding: 0 0.5rem;
+      padding-right: 0;
+      background-color: map-get($map: $colors, $key: 'mainGrey');
+      border: 1px solid map-get($map: $colors, $key: "mainGrey");
+      border-right: none;
+      border-radius: 0.5rem;
+      @include row_start_center;
+    }
+
+    &_icon {
+      width: 2.2rem;
+      height: 2.2rem;
+      opacity: 0.5;
+    }
+
+    &_search {
+      width: 90%;
+      height: 3.5rem;
+      padding-left: 1rem;
+      border-radius: 0.5rem;
+      border: none;
+      outline: none;
+      font-family: $primary_font;
+      font-size: 1.6rem;
+
+      &:valid .SearchSection_form_iconInput {
+        border: 1px solid map-get($map: $colors, $key: "mainGreen");
+      }
+
+      &::-webkit-calendar-picker-indicator {
+        color: map-get($map: $colors, $key: "main");
+        opacity: 1;
+      }
+    }
+
+    &_iconInput_btn {
+      padding: 1rem 1.8rem;
+      background-color: map-get($map: $colors, $key: "main");
+      color: #fff;
+      font-family: $primary_font;
+      font-size: 1.3rem;
+      border: none;
+      outline: none;
+      margin-left: auto;
+
+      &:hover {
+        cursor: pointer;
+        background-color: hsla(240, 90%, 62%, 1);
+      }
+
+      &:focus {
+        background-color: hsla(260, 90%, 62%, 1);
+      }
+    }
+  }
+
+  &:focus-within .SearchSection_form_iconInput {
+    border: 1px solid map-get($map: $colors, $key: "mainGreen");
+  }
+}
+
+// \2193
+// &#xf0d7;

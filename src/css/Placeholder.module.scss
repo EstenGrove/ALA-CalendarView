@@ -1,0 +1,16 @@
+@import '../sass/_mixins';
+@import '../sass/_variables';
+
+
+.Placeholder {
+    @include fill_container;
+    @include row_center_all;
+    text-align: center;
+    font-family: map-get($map: $fonts, $key: 'mainSans');
+
+    &_heading {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: map-get($map: $blueGreys, $key: 'headings');
+    }
+}

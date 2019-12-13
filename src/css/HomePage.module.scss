@@ -1,0 +1,10 @@
+@import '../sass/variables';
+@import '../sass/mixins';
+
+.HomePage {
+    @include fill_container;
+
+    &_inner {
+        @include col_start_start;
+    }
+}

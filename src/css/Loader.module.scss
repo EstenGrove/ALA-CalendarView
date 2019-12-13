@@ -1,0 +1,131 @@
+@import '../sass/_mixins';
+@import '../sass/_variables';
+
+.Loader {
+    display: inline-block;
+    position: relative;
+    width: 6.4rem;
+    height: 6.4rem;
+
+    &_dot {
+        -webkit-animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+                animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        -webkit-transform-origin: 32px 32px;
+                transform-origin: 32px 32px;
+
+        &::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            width: .6rem;
+            height: .6rem;
+            border-radius: 50%;
+            background-color: map-get($map: $colors, $key: 'mainBlackBlue');
+            margin: -.3rem 0 0 -.3rem; // might be wrong
+        }
+
+        &:nth-child(1) {
+            -webkit-animation-delay: -0.036s;
+                    animation-delay: -0.036s;
+
+            &::after {
+                top: 5rem;
+                left: 5rem;
+            }
+        }
+
+        &:nth-child(2) {
+            -webkit-animation-delay: -0.072s;
+                    animation-delay: -0.072s;
+
+            &::after {
+                top: 5.4rem;
+                left: 4.5rem;
+            }
+        }
+
+        &:nth-child(3) {
+            -webkit-animation-delay: -0.108s;
+                    animation-delay: -0.108s;
+
+            &::after {
+                top: 5.7rem;
+                left: 3.9rem;
+            }
+        }
+
+        &:nth-child(4) {
+            -webkit-animation-delay: -0.144s;
+                    animation-delay: -0.144s;
+
+            &::after {
+                top: 5.8rem;
+                left: 3.2rem;
+            }
+        }
+
+        &:nth-child(5) {
+            -webkit-animation-delay: -0.18s;
+                    animation-delay: -0.18s;
+
+            &::after {
+                top: 5.7rem;
+                left: 2.5rem;
+            }
+        }
+
+        &:nth-child(6) {
+            -webkit-animation-delay: -0.216s;
+                    animation-delay: -0.216s;
+
+            &::after {
+                top: 5.4rem;
+                left: 1.9rem;
+            }
+        }
+
+        &:nth-child(7) {
+            -webkit-animation-delay: -0.252s;
+                    animation-delay: -0.252s;
+
+            &::after {
+                top: 5rem;
+                left: 1.4rem;
+            }
+        }
+
+        &:nth-child(8) {
+            -webkit-animation-delay: -0.288s;
+                    animation-delay: -0.288s;
+
+            &::after {
+                top: 4.5rem;
+                left: 1rem;
+            }
+        }
+    }
+}
+
+@-webkit-keyframes loader {
+    0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+
+@keyframes loader {
+    0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}

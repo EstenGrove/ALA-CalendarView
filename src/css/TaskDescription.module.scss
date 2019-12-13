@@ -1,0 +1,27 @@
+@import '../sass/variables';
+@import '../sass/mixins';
+
+
+.TaskDescription {
+    width: 100%;
+    @include row_between_center;
+
+    &_text {
+        margin: 2rem 2rem;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: map-get($map: $colors, $key: 'mainBlackBlue');
+    }
+
+    &_right {
+        @include col_start_end;
+
+        &_day {
+            margin: 0 2rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: map-get($map: $colors, $key: 'mainBlackBlue');
+        }
+    }
+
+}

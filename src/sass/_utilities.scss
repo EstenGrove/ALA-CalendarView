@@ -1,0 +1,13 @@
+@import "./layout";
+@import "./mixins";
+@import "./variables";
+
+%fill_container {
+  width: 100%;
+  height: 100%;
+}
+
+%fill_screen {
+  max-width: 100vw;
+  height: 100vh;
+}

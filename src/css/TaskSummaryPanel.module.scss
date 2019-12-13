@@ -1,0 +1,84 @@
+@import '../sass/variables';
+@import '../sass/mixins';
+
+.TaskSummary {
+    margin: 1rem 2rem;
+    max-width: 100%;
+    height: 15rem;
+    background-color: #ffffff;
+    border-radius: .5rem;
+    -webkit-box-shadow: map-get($map: $shadows, $key: 'tight');
+    box-shadow: map-get($map: $shadows, $key: 'tight');
+
+    &_title {
+        margin-left: 1rem;
+        margin-top: .5rem;
+        font-size: 1.3rem;
+        font-weight: 300;
+        font-family: map-get($map: $fonts, $key: 'mainSans');
+        color: map-get($map: $blueGreys, $key: 'medium');
+    }
+
+    &_inner {
+        @include row_evenly_center;
+        max-width: auto;
+        padding: 1rem 2rem;
+
+        &_tile {
+            @include col_center_all;
+            width: 100%;
+            height: 100%;
+            padding: 1rem 2rem;
+            border-right: 1px solid map-get($map: $blueGreys, $key: 'light');
+
+            &:last-child {
+                border: none;
+            }
+
+            &_count {
+                width: 100%;
+                text-align: center;
+                font-size: 5rem;
+                font-family: map-get($map: $fonts, $key: 'altSans');
+                font-weight: 400;
+                color: map-get($map: $colors, $key: 'mainBlue');
+                margin: 0 auto;
+                margin-bottom: 1rem;
+            }
+
+            &_heading {
+                width: 100%;
+                text-align: center;
+                font-size: 1.5rem;
+                font-family: map-get($map: $fonts, $key: 'altSans');
+                font-weight: 500;
+                color: map-get($map: $blueGreys, $key: 'medium');
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.red {
+    color: map-get($map: $colors, $key: 'mainRed');
+}
+
+.blue {
+    color: map-get($map: $colors, $key: 'mainBlue');
+}
+
+.yellow {
+    color: map-get($map: $colors, $key: 'mainYellow');
+}
+
+.orange {
+    color: map-get($map: $colors, $key: 'mainOrange');
+}
+
+.green {
+    color: map-get($map: $colors, $key: 'mainGreen');
+}
+
+.noTask {
+    color: map-get($map: $colors, $key: 'mainCharcoal');
+}

@@ -1,0 +1,158 @@
+@import "../sass/variables";
+@import "../sass/mixins";
+
+.Nav {
+  max-width: 100vw;
+  height: 6rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eaecef;
+  -webkit-box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+
+  &_list {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    list-style-type: none;
+    @include row_start_vertical_center;
+
+    &_logoContainer {
+      height: 100%;
+      width: 5rem;
+      @include row_vertical_center;
+
+      &_logo {
+        width: 4.5rem;
+        height: 4.5rem;
+      }
+    }
+
+    &_link {
+      margin-left: 1rem;
+      font-family: "Raleway", sans-serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      position: relative;
+      cursor: pointer;
+
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 2rem;
+        left: 0.5rem;
+        width: 0;
+        height: 2px;
+        background: #d7263d;
+        opacity: 0.5;
+        -webkit-transition: width 0.2s ease-in;
+        transition: width 0.2s ease-in;
+      }
+
+      &:hover::after {
+        width: 85%;
+      }
+    }
+
+    &_link>a {
+      text-decoration: none;
+      color: map-get($map: $colors, $key: "main");
+    }
+
+    &_mobile {
+      width: 2rem;
+      height: 2rem;
+      display: none;
+
+      &_icon {
+        width: 2rem;
+        height: 2rem;
+        fill: #111;
+        cursor: pointer;
+
+        &:hover {
+          fill: map-get($map: $colors, $key: "main");
+        }
+      }
+    }
+
+    &_customlink {
+      margin-left: 1rem;
+      font-family: "Raleway",
+        sans-serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+}
+
+// Mobile nav when icon is clicked
+.Mobile {
+  width: 30rem;
+  height: 50rem;
+  padding: 5rem;
+  display: none;
+  position: fixed;
+  top: 6rem;
+  right: 2rem;
+  background-color: #f4f4f4;
+  -webkit-clip-path: polygon(100% 0,
+      100% 20%,
+      100% 48%,
+      100% 100%,
+      0 100%,
+      0 20%,
+      86% 20%);
+  clip-path: polygon(100% 0,
+      100% 20%,
+      100% 48%,
+      100% 100%,
+      0 100%,
+      0 20%,
+      86% 20%);
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 0.5rem;
+  z-index: 250;
+
+  &_list {
+    width: 100%;
+    height: 100%;
+    @include col_start_center;
+
+    &_link {
+      width: 100%;
+      font-size: 2rem;
+      list-style: none;
+
+      &:hover {
+        color: map-get($map: $colors, $key: "mainBlue");
+      }
+    }
+
+    &_link>a {
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .Nav_list {
+    &_link {
+      display: none;
+    }
+
+    &_mobile {
+      display: block;
+      margin-left: auto;
+    }
+  }
+}
+
+.show {
+  display: block;
+}

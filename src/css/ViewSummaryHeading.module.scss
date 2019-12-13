@@ -1,0 +1,112 @@
+@import "../sass/mixins";
+@import "../sass/variables";
+
+.ViewSummaryHeading {
+    position: relative;
+    width: 100%;
+    height: 10rem;
+    padding: 1rem 3rem;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    font-family: map-get($map: $fonts, $key: 'mainSans');
+    border-top: 3px solid map-get($map: $flatColors, $key: "main");
+    z-index: 100;
+
+    &_title {
+        font-size: 3.2rem;
+        color: map-get($map: $colors, $key: 'mainBlackBlue');
+    }
+}
+
+.actionBox {
+    width: 100%;
+    height: 3rem;
+    @include row_end_center;
+
+}
+
+.icon_print {
+    width: 3rem;
+    height: 3rem;
+    fill: map-get($map: $blueGreys, $key: 'headings');
+}
+
+.icon_print:hover {
+    fill: #5c75ea;
+    cursor: pointer;
+}
+
+.pdf {
+    margin-left: 1rem;
+    fill: map-get($map: $blueGreys, $key: 'headings');
+}
+
+.pdf:hover {
+    color: #5c75ea;
+    cursor: pointer;
+}
+
+/* ------- MEDIA QUERIES --------- */
+@media screen and (max-width: 700px) {
+    .ViewSummaryHeading {
+        padding: 1rem 1rem;
+
+        &_title {
+            font-size: 2.6rem;
+        }
+    }
+
+    .actionBox {
+        height: 100%;
+    }
+
+    .icon_print {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .pdf {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 445px) {
+    .ViewSummaryHeading {
+        &_title {
+            font-size: 2rem;
+        }
+    }
+
+    .actionBox {
+        width: 100%;
+        height: 100%;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .icon_print {
+        margin-top: 1rem;
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+
+    .pdf {
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .ViewSummaryHeading {
+        &_title {
+            font-size: 1.8rem;
+        }
+    }
+}

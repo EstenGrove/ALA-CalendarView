@@ -1,0 +1,7 @@
+@import '../sass/variables';
+@import '../sass/mixins';
+
+.ViewSummary {
+    @include fill_container;
+    padding: 3rem 2rem;
+}

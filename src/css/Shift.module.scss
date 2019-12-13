@@ -1,0 +1,66 @@
+@import "../sass/mixins";
+@import "../sass/variables";
+
+.Shift {
+  width: 100%;
+  height: calc(7rem / 3.5);
+  margin-bottom: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: #a5a2a9;
+  text-align: center;
+  background-color: map-get($map: $colors, $key: 'mainGrey');
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: $primary_font;
+  z-index: 1;
+
+  &:nth-child(odd) {
+    padding-top: 0.4rem;
+  }
+
+  &:nth-child(even) {
+    border: 1px solid map-get($map: $colors, $key: 'mainGrey');
+    border-left: none;
+    border-right: none;
+    padding-top: 0.7rem;
+    height: 3rem;
+  }
+
+  // gets darker on hover
+  &:hover {
+    cursor: pointer;
+    background-color: #d3d4d7;
+  }
+}
+
+// Statuses
+.COMPLETE {
+  background-color: map-get($map: $flatColors, $key: 'mainGreen');
+
+}
+
+.PENDING {
+  background-color: map-get($map: $flatColors, $key: 'mainOrange');
+
+}
+
+.NOT-COMPLETE {
+  background-color: #eaecef;
+}
+
+.MISSED-EVENT {
+  background-color: map-get($map: $flatColors, $key: 'mainRed');
+
+}
+
+.IN-PROGRESS {
+  background-color: map-get($map: $flatColors, $key: 'mainYellow');
+
+}
+
+.NO-TASK {
+  opacity: .3;
+}

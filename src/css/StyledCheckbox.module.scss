@@ -1,0 +1,74 @@
+@import '../sass/mixins';
+@import '../sass/variables';
+
+.StyledCheckbox {
+  width: 100%;
+  position: relative;
+  margin-bottom: 2rem;
+  @include row_start_center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &_checkbox {
+    width: 1.4rem;
+    visibility: hidden;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &_label {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &::before {
+      width: 1.7rem;
+      height: 1.7rem;
+      position: absolute;
+      display: block;
+      content: "";
+      top: .2rem;
+      left: 0;
+      border: 1px solid #777;
+      border-radius: 0.5rem;
+    }
+
+    &::after {
+      width: 1.7rem;
+      height: 1.7rem;
+      position: absolute;
+      display: none;
+      content: "✓";
+      font-size: 1.4rem;
+      font-weight: bold;
+      top: .1rem;
+      left: .2rem;
+      border-radius: .5rem;
+      color: #fff;
+    }
+  }
+
+  input[type="checkbox"]:checked+&_label::before {
+    background-color: map-get($map: $colors, $key: 'mainPurple');
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  input[type="checkbox"]:checked+&_label::after {
+    display: block;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

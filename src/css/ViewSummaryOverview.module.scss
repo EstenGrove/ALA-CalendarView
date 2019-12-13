@@ -1,0 +1,96 @@
+@import "../sass/mixins";
+@import "../sass/variables";
+
+.ViewSummaryOverview {
+    margin-top: 3rem;
+    width: 100%;
+    min-height: 60rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    font-family: map-get($map: $fonts, $key: 'mainSans');
+    -webkit-box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.25);
+
+    &_heading {
+        width: 100%;
+        height: 6rem;
+        @include row_between;
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+        border-bottom: 2px solid #ccc;
+    }
+
+    &_heading h3 {
+        font-size: 2.5rem;
+        opacity: 0.5;
+    }
+
+    &_heading h6 {
+        opacity: 0.4;
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+
+    &_chartings {
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+    }
+}
+
+.icon_settings {
+    margin-top: 2rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+.icon_settings:hover {
+    fill: map-get($map: $colors, $key: 'main');
+    cursor: pointer;
+}
+
+// .chartings {
+//   width: 100%;
+//   height: 100%;
+//   padding: 1rem;
+// }
+.Data {
+    @include row_evenly_center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+// DATACIRCLE COMPONENT'S SASS
+.DataCircle {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    @include row_center_all;
+    border: 2px solid map-get($map: $colors, $key: 'mainBlackBlue');
+}
+
+.inner {
+    font-size: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.innerLabel {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.avg {
+    font-weight: bold;
+    color: map-get($map: $colors, $key: 'main');
+}

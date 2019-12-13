@@ -1,0 +1,78 @@
+@import "../sass/mixins";
+@import "../sass/variables";
+
+.ViewSummaryVitals {
+    min-width: 40%;
+    height: 50rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    margin-right: 2rem;
+    -webkit-box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.25);
+    font-family: map-get($map: $fonts, $key: 'mainSans');
+    overflow-y: auto;
+
+    &_heading {
+        width: 100%;
+        height: 5rem;
+        @include row_between;
+        border-bottom: 2px solid #ccc;
+    }
+
+    &_heading h1 {
+        font-size: 2.5rem;
+        opacity: 0.5;
+    }
+
+    &_chartings {
+        min-width: 100%;
+        height: 100%;
+        padding: 1rem 3rem;
+        @include col_center_all;
+
+        &_split {
+            width: 100%;
+            height: 2px;
+            margin-bottom: 5rem;
+        }
+    }
+}
+
+.icon_settings {
+    margin-top: 2rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+.icon_settings:hover {
+    fill: #5c75ea;
+    cursor: pointer;
+}
+
+@media (max-width: 1350px) {
+    .ViewSummaryVitals {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 1150px) {
+    .ViewSummaryVitals {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 2rem;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 750px) {
+    .ViewSummaryVitals {
+        overflow-y: auto;
+
+        &_chartings {
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+    }
+}

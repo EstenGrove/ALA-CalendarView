@@ -1,0 +1,138 @@
+@import "../sass/layout";
+@import "../sass/mixins";
+@import "../sass/variables";
+@import "../sass/utilities";
+
+.ResidentDetails {
+  width: 100%;
+  height: 10rem;
+  position: relative;
+  @include row_start;
+  -ms-flex-preferred-size: 1;
+  flex-basis: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  background-color: map-get($map: $colors, $key: "mainGrey");
+  border-radius: 1rem 1rem 0 0;
+
+  &_imgWrapper {
+    width: 15rem;
+    height: 100%;
+    padding: 0 0.5rem;
+    font-family: $primary_font;
+    font-weight: semibold;
+    @include col_center_all;
+    background-color: map-get($map: $blueGreys, $key: "light");
+    // border-radius: 1rem 0 0 0;
+    border-radius: 50%;
+
+    &>span {
+      text-overflow: ellipsis;
+      text-align: center;
+    }
+
+    &_noPhoto {
+      background-color: #ffffff;
+      width: 70%;
+      height: 70%;
+      display: block;
+      margin: 0 auto;
+      fill: map-get($map: $blueGreys, $key: 'medium');
+      border: 1px solid hsla(211, 25%, 84%, 1);
+      border-radius: 50%;
+    }
+
+    &_img {
+      width: 9rem;
+      height: 9rem;
+      border-radius: 50%;
+      border: 3px solid #222;
+    }
+  }
+
+  &_resInfo {
+    width: 30rem;
+    padding: 0.5rem;
+    font-family: $primary_font;
+  }
+
+  &_resInfo_name {
+    text-overflow: ellipsis;
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+    color: map-get($map: $textGreys, $key: "dark");
+  }
+
+  &_resInfo_age,
+  &_resInfo_unit {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: map-get($map: $textGreys, $key: "light");
+  }
+
+  &_extra {
+    width: 100%;
+    height: 100%;
+    font-family: $primary_font;
+    @include row_evenly_start;
+  }
+
+  &_extra_stats_title {
+    font-size: 1.3rem;
+    color: map-get($map: $blueGreys, $key: "darkish");
+    text-decoration: underline;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+  }
+
+  &_extra_stats_value {
+    color: map-get($map: $blueGreys, $key: "saturated");
+  }
+
+  &_more {
+    font-family: $primary_font;
+    color: map-get($map: $colors, $key: "vibe");
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    justify-self: flex-end;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .ResidentDetails {
+    &_imgWrapper {
+      width: 10rem;
+
+      &_noPhoto {
+        width: 70%;
+        height: 70%;
+
+        fill: map-get($map: $blueGreys, $key: 'headings');
+      }
+    }
+
+    &_resInfo {
+      margin-left: 0.5rem;
+    }
+
+    &_extra {
+      display: none;
+    }
+
+    &_more {
+      font-family: $primary_font;
+      color: map-get($map: $colors, $key: "vibe");
+      -ms-flex-item-align: end;
+      align-self: flex-end;
+      justify-self: flex-end;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

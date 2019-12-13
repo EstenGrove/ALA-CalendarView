@@ -1,0 +1,27 @@
+@import "../sass/layout";
+@import "../sass/mixins";
+@import "../sass/variables";
+
+.Calendar {
+  width: 100%;
+  min-height: 100%;
+  border-radius: 1rem;
+  border-bottom: none;
+  padding: 1rem 10rem;
+  background-color: transparent;
+
+  &_inner {
+    -webkit-box-shadow: $medium_shadow;
+    box-shadow: $medium_shadow;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 1rem;
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .Calendar {
+    padding: 1rem 5rem;
+  }
+}

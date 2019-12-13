@@ -1,0 +1,41 @@
+@import '../sass/variables';
+@import '../sass/mixins';
+
+
+
+
+.StatusBadge {
+    max-width: 15rem;
+    padding: .6rem 2rem;
+    border-radius: 5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    @include row_center_all;
+
+}
+
+.pending {
+    background-color: map-get($map: $flatColors, $key: 'mainOrange');
+    color: map-get($map: $blueGreys, $key: 'headings');
+}
+
+.complete {
+    background-color: map-get($map: $flatColors, $key: 'mainGreen');
+    color: map-get($map: $blueGreys, $key: 'headings');
+}
+
+.notComplete {
+    background-color: map-get($map: $blueGreys, $key: 'saturated');
+    color: map-get($map: $blueGreys, $key: 'headings');
+    border: 1px solid map-get($map: $colors, $key: 'mainCharcoal');
+}
+
+.missedEvent {
+    background-color: map-get($map: $flatColors, $key: 'mainRed');
+    color: map-get($map: $blueGreys, $key: 'headings');
+}
+
+.inProgress {
+    background-color: map-get($map: $flatColors, $key: 'mainYellow');
+    color: map-get($map: $blueGreys, $key: 'headings');
+}

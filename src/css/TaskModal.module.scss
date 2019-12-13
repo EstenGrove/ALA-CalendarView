@@ -1,0 +1,83 @@
+@import "../sass/variables";
+@import "../sass/mixins";
+
+.TaskModal {
+  @include fill_container;
+  padding: 1rem 1rem;
+
+  &_content {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  &_toggleForm {
+    width: auto;
+    height: auto;
+    @include row_start_center;
+    margin-bottom: 1rem;
+
+    &_text {
+      font-size: 1.4rem;
+      color: map-get($map: $colors, $key: "main");
+      cursor: pointer;
+      padding-right: 1rem;
+    }
+
+    &_icon {
+      width: 2rem;
+      height: 2rem;
+      fill: map-get($map: $colors, $key: "mainBlackBlue");
+      cursor: pointer;
+      fill: map-get($map: $colors, $key: "main");
+    }
+  }
+
+  &_updateForm {
+    width: 100%;
+    height: auto;
+  }
+
+  // ALL TASKS SECTION LIST
+  &_allItems {
+    @include fill_container;
+  }
+
+  &_allItems_list {
+    @include col_start_start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  &_viewItems {
+    @include row_between_center;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    background-color: transparent;
+    border: 1px solid map-get($map: $colors, $key: "main");
+    color: map-get($map: $colors, $key: "main");
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 2rem auto;
+
+    &:hover {
+      cursor: pointer;
+      background-color: map-get($map: $colors, $key: "main");
+      color: #ffffff;
+    }
+  }
+}
+
+.NO_TASKS {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: map-get($map: $colors, $key: 'mainBlackBlue');
+  text-align: center;
+}
+
+.reassess_notes {
+  display: none;
+}
+
+.show {
+  display: initial;
+}

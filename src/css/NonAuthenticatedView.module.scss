@@ -1,0 +1,7 @@
+@import '../sass/variables';
+@import '../sass/mixins';
+
+
+.NonAuthenticatedView {
+    @include fill_container;
+}

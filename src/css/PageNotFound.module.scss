@@ -1,0 +1,45 @@
+@import '../sass/variables';
+@import '../sass/mixins';
+
+.PageNotFound {
+    @include fill_container;
+    padding: 2rem;
+
+    &_title,
+    &_subtitle {
+        font-size: 3rem;
+        font-weight: 600;
+        font-family: map-get($map: $fonts, $key: 'altSans');
+        color: map-get($map: $blueGreys, $key: 'saturatedBlue');
+    }
+
+    &_subtitle {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+    &_redirects {
+        margin-top: 10rem;
+        width: 100%;
+        height: auto;
+        @include row_start_center;
+
+        &_redirectBtn {
+            padding: 1.2rem 2.4rem;
+            border-radius: .5rem;
+            border: none;
+            outline: none;
+            font-size: 1.4rem;
+            margin-right: 2rem;
+            background-color: map-get($map: $blueGreys, $key: 'saturatedBlue');
+            color: map-get($map: $blueGreys, $key: 'light');
+
+            &:hover {
+                cursor: pointer;
+                -webkit-box-shadow: map-get($map: $shadows, $key: 'medium');
+                box-shadow: map-get($map: $shadows, $key: 'medium');
+            }
+        }
+    }
+
+}
