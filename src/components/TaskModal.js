@@ -23,6 +23,7 @@ import {
   findStatusID,
   getPriorityID
 } from "../helpers/misc_helpers";
+import { updateTask, taskUpdateModel } from "../helpers/utils_tasks";
 
 const initialFormState = {
   touched: {},
@@ -106,24 +107,28 @@ const TaskModal = ({ tasks = [], task = {}, handleClose, isOpen }) => {
   const submitHandler = async e => {
     e.persist();
     if (RESIDENT_UNAVAILABLE) task.AssessmentTaskStatusId = 8;
+    // handles new tasks
     if (!activeTask.hasOwnProperty("AssessmentTrackingId")) {
       if (RESIDENT_UNAVAILABLE) task.AssessmentTaskStatusId = 8;
       const taskClone = {
-        ...task,
-        UserId: state.currentUser.userID,
-        ResidentId: currentResident.ResidentID,
-        AssessmentTaskStatusId: findStatusID(TASK_STATUS),
-        AssessmentReasonId: 6,
-        AssessmentResolutionId: 1,
-        AssessmentPriorityId: getPriorityID(TASK_PRIORITY),
-        Notes: TASK_NOTES,
-        FollowUpDate: TASK_FOLLOWUP,
-        SignedBy: TASK_SIGNATURE,
-        InitialBy: "NA",
-        CompletedDate: new Date(),
-        IsCompleted: TASK_STATUS === "COMPLETED" ? true : false,
-        CompletedAssessmentShiftId: 4
+        ...taskUpdateModel,
+        currentUser: {
+          userID: state.currentUser.userID
+        },
+        currentResident: {
+          residentID: currentResident.ResidentID
+        },
+        taskVals: {
+          status: TASK_STATUS,
+          priority: TASK_PRIORITY,
+          notes: TASK_NOTES,
+          followUpDate: TASK_FOLLOWUP,
+          signedBy: TASK_SIGNATURE,
+          initialBy: "",
+          completedShiftId: null
+        }
       };
+
       console.log("taskClone", taskClone);
       const unscheduledParams = {
         "db-meta": "Advantage",
@@ -190,9 +195,7 @@ const TaskModal = ({ tasks = [], task = {}, handleClose, isOpen }) => {
       0
     );
 
-    const parsed = await JSON.parse(responseData.Data);
-    const raw = parsed[0];
-
+    const parsed = await responseData.Data;
     const clonedState = { ...state };
 
     if (responseData.Data) {
@@ -200,7 +203,7 @@ const TaskModal = ({ tasks = [], task = {}, handleClose, isOpen }) => {
         ...clonedState,
         globals: {
           ...clonedState.globals,
-          tasks: raw.ADLCareTask
+          tasks: parsed.ADLCareTask
         }
       };
       await dispatch({

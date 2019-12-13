@@ -1,20 +1,26 @@
 # AdvantageTracker v1 Iteration
 
-This is the working version 1 of the ALA Tracker.
+This is the working version 1 of the ALA Tracker. It includes minor refactors for:
 
----
+- Global state object's shape
+- Updated Initial fetch for residents and the user's profile.
 
-## Data Definitions
+## Tasks (To Do's)
 
-- **AssessmentTrackingId**:
+- Refactor various areas
+- Consider major restructuring of application routing
+- Consider using lazy loading of the app using React Lazy to prevent rendering needless UI:
 
-  - entry in DB for recording task.
+```javascript
+const AuthenticatedApp = React.lazy(() => import("./somefile"));
+const NonAuthenticatedApp = React.lazy(() => import("./someotherfile"));
 
-- **AssessmentShiftId**: numeric value for shifts (ie. AM, PM, NOC)
-- **AssessmentTaskId**: actual Assessment Option (ie "Ambulates Independently")
-
-  - ADLId: additional ID used to represent the Assessment task option (ie. "Ambulates Independently")
-
-- **AssessmentCategoryId**: numeric representation of (ie. "Dressing", "Bathing")
-  - Name: (ie. "Dressing", "Bathing" etc.)
-  - Description: (ie. "Dressing", "Bathing" etc.)
+function App() {
+  const { authData } = useContext(AuthContext);
+  return authData.isAuthenticated ? (
+    <AuthenticatedApp />
+  ) : (
+    <NonAuthenticatedApp />
+  );
+}
+```
